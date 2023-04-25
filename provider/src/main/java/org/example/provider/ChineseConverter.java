@@ -7,12 +7,9 @@ import java.math.BigDecimal;
 
 @Currency("CNY")
 public class ChineseConverter implements Converter {
-    public ChineseConverter() {
-        System.out.println("Chinese currency created");
-    }
 
     @Override
     public BigDecimal convert(BigDecimal amountInSek) {
-        return null;
+        return amountInSek.multiply(BigDecimal.valueOf(0.67));
     }
 }

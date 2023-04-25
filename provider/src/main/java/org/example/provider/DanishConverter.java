@@ -7,13 +7,10 @@ import java.math.BigDecimal;
 
 @Currency("DKK")
 public class DanishConverter implements Converter {
-    public DanishConverter() {
-        System.out.println("Danish currency created");
 
-    }
 
     @Override
     public BigDecimal convert(BigDecimal amountInSek) {
-        return null;
+        return amountInSek.multiply(BigDecimal.valueOf(0.66));
     }
 }

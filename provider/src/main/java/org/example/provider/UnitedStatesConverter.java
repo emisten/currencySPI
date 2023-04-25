@@ -7,12 +7,9 @@ import java.math.BigDecimal;
 
 @Currency("USD")
 public class UnitedStatesConverter implements Converter {
-    public UnitedStatesConverter() {
-        System.out.println("US currency created");
 
-    }
     @Override
     public BigDecimal convert(BigDecimal amountInSek) {
-        return null;
+        return amountInSek.multiply(BigDecimal.valueOf(0.098));
     }
 }
