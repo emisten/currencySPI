@@ -1,6 +1,8 @@
 package org.example.consumer;
 import org.example.service.Converter;
 import org.example.service.annotation.Currency;
+
+import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -30,7 +32,7 @@ public class Consumer {
             var value = sc.nextBigDecimal();
             var c = getConverter(currency).get();
             var convertedValue = c.convert(value);
-            System.out.printf("%s SEK is %s %s", value.setScale(2).toPlainString(), convertedValue.setScale(2).toPlainString(), currency);
+            System.out.printf("%s SEK is %s %s", value.setScale(2, RoundingMode.HALF_UP).toPlainString(), convertedValue.setScale(2, RoundingMode.HALF_UP).toPlainString(), currency);
         }
     }
 
